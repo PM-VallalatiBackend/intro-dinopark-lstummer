@@ -2,11 +2,12 @@ package hu.progmasters.dinopark;
 
 public class DinoParkApp {
 
-    String whatever = "Whatever";
+    static String whatever = "Whatever";
 
     public static void main(String[] args) {
+        DinoParkApp.whatever="";
 
         DinoParkApp dinoParkApp = new DinoParkApp();
-        DinoParkApp dinoParkApp2 = new DinoParkApp();
+        dinoParkApp.whatever="";    // Bad practice!
     }
 }
