@@ -3,6 +3,7 @@ package hu.progmasters.dinopark.repository;
 import hu.progmasters.dinopark.domain.Dinosaur;
 import org.springframework.stereotype.Repository;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class DinoRepositoryInMemory implements DinoRepository{
     @Override
     public List<Dinosaur> list() {
         return dinosaurs.values().stream()
-                .sorted((firstDino, secondDino) -> firstDino.getId().compareTo(secondDino.getId()))
+                .sorted(Comparator.comparing(Dinosaur::getId))
                 .collect(Collectors.toList());
     }
 }
